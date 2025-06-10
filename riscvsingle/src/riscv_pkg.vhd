@@ -92,6 +92,18 @@ PACKAGE riscv_pkg IS
 	END COMPONENT;
 	--END OF extend
 	
+	-- aludec declaration
+	COMPONENT aludec
+		PORT (
+      ALUOp     : IN  BIT_VECTOR(1 DOWNTO 0);
+      funct3    : IN  BIT_VECTOR(2 DOWNTO 0);
+      opb5      : IN  BIT;
+      funct7b5  : IN  BIT;
+      ALUControl: OUT BIT_VECTOR(2 DOWNTO 0)
+    );
+	END COMPONENT;
+	-- END OF aludec
+	
 END riscv_pkg;
 
 PACKAGE BODY riscv_pkg IS

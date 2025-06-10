@@ -1,5 +1,5 @@
 Analysis & Synthesis report for riscvsingle
-Mon Jun  9 14:32:00 2025
+Tue Jun 10 17:24:16 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -14,10 +14,9 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  9. Post-Synthesis Netlist Statistics for Top Partition
+ 10. Elapsed Time Per Partition
+ 11. Analysis & Synthesis Messages
 
 
 
@@ -44,16 +43,16 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jun  9 14:32:00 2025           ;
+; Analysis & Synthesis Status        ; Successful - Tue Jun 10 17:24:16 2025           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; riscvsingle                                     ;
-; Top-level Entity Name              ; extend                                          ;
+; Top-level Entity Name              ; aludec                                          ;
 ; Family                             ; MAX 10                                          ;
-; Total logic elements               ; 15                                              ;
-;     Total combinational functions  ; 15                                              ;
+; Total logic elements               ; 5                                               ;
+;     Total combinational functions  ; 5                                               ;
 ;     Dedicated logic registers      ; 0                                               ;
 ; Total registers                    ; 0                                               ;
-; Total pins                         ; 66                                              ;
+; Total pins                         ; 10                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -69,7 +68,7 @@ on the Quartus Prime software download page.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; 10M50DAF484C7G     ;                    ;
-; Top-level entity name                                            ; extend             ; riscvsingle        ;
+; Top-level entity name                                            ; aludec             ; riscvsingle        ;
 ; Family name                                                      ; MAX 10             ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -154,8 +153,8 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 20          ;
+; Maximum allowed            ; 14          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -165,45 +164,45 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                         ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                  ; Library ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------+---------+
-; ../src/extend.vhd                ; yes             ; User VHDL File  ; C:/Users/gusta/OneDrive/Documentos/ProjetosQuartus/riscvsingle/src/extend.vhd ;         ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                          ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                   ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------+---------+
+; ../src/aludec.vhd                ; yes             ; User VHDL File  ; C:/Users/Eduar/Documents/GitHub/HardwareDescriptionLanguage_SEL0632/riscvsingle/src/aludec.vhd ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                   ;
-+---------------------------------------------+-----------------+
-; Resource                                    ; Usage           ;
-+---------------------------------------------+-----------------+
-; Estimated Total logic elements              ; 15              ;
-;                                             ;                 ;
-; Total combinational functions               ; 15              ;
-; Logic element usage by number of LUT inputs ;                 ;
-;     -- 4 input functions                    ; 14              ;
-;     -- 3 input functions                    ; 1               ;
-;     -- <=2 input functions                  ; 0               ;
-;                                             ;                 ;
-; Logic elements by mode                      ;                 ;
-;     -- normal mode                          ; 15              ;
-;     -- arithmetic mode                      ; 0               ;
-;                                             ;                 ;
-; Total registers                             ; 0               ;
-;     -- Dedicated logic registers            ; 0               ;
-;     -- I/O registers                        ; 0               ;
-;                                             ;                 ;
-; I/O pins                                    ; 66              ;
-;                                             ;                 ;
-; Embedded Multiplier 9-bit elements          ; 0               ;
-;                                             ;                 ;
-; Maximum fan-out node                        ; instr[31]~input ;
-; Maximum fan-out                             ; 21              ;
-; Total fan-out                               ; 157             ;
-; Average fan-out                             ; 1.07            ;
-+---------------------------------------------+-----------------+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 5              ;
+;                                             ;                ;
+; Total combinational functions               ; 5              ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 4              ;
+;     -- 3 input functions                    ; 0              ;
+;     -- <=2 input functions                  ; 1              ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 5              ;
+;     -- arithmetic mode                      ; 0              ;
+;                                             ;                ;
+; Total registers                             ; 0              ;
+;     -- Dedicated logic registers            ; 0              ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 10             ;
+;                                             ;                ;
+; Embedded Multiplier 9-bit elements          ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; ALUOp[1]~input ;
+; Maximum fan-out                             ; 3              ;
+; Total fan-out                               ; 31             ;
+; Average fan-out                             ; 1.24           ;
++---------------------------------------------+----------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -211,7 +210,7 @@ on the Quartus Prime software download page.
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
-; |extend                    ; 15 (15)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 66   ; 0            ; 0          ; |extend             ; extend      ; work         ;
+; |aludec                    ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 10   ; 0            ; 0          ; |aludec             ; aludec      ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -231,28 +230,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |extend|Mux12              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 66                          ;
-; cycloneiii_lcell_comb ; 15                          ;
-;     normal            ; 15                          ;
-;         3 data inputs ; 1                           ;
-;         4 data inputs ; 14                          ;
+; boundary_port         ; 10                          ;
+; cycloneiii_lcell_comb ; 6                           ;
+;     normal            ; 6                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 1                           ;
+;         4 data inputs ; 4                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.00                        ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 2.46                        ;
 +-----------------------+-----------------------------+
 
 
@@ -271,60 +262,55 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Mon Jun  9 14:31:50 2025
+    Info: Processing started: Tue Jun 10 17:23:49 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off riscvsingle -c riscvsingle
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file /users/gusta/onedrive/documentos/projetosquartus/riscvsingle/src/mux2.vhd
-    Info (12022): Found design unit 1: mux2-rtl File: C:/Users/gusta/OneDrive/Documentos/ProjetosQuartus/riscvsingle/src/mux2.vhd Line: 13
-    Info (12023): Found entity 1: mux2 File: C:/Users/gusta/OneDrive/Documentos/ProjetosQuartus/riscvsingle/src/mux2.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file /users/gusta/onedrive/documentos/projetosquartus/riscvsingle/src/mux3.vhd
-    Info (12022): Found design unit 1: mux3-rtl File: C:/Users/gusta/OneDrive/Documentos/ProjetosQuartus/riscvsingle/src/mux3.vhd Line: 8
-    Info (12023): Found entity 1: mux3 File: C:/Users/gusta/OneDrive/Documentos/ProjetosQuartus/riscvsingle/src/mux3.vhd Line: 1
-Info (12021): Found 2 design units, including 1 entities, in source file /users/gusta/onedrive/documentos/projetosquartus/riscvsingle/src/flopr.vhd
-    Info (12022): Found design unit 1: flopr-rtl File: C:/Users/gusta/OneDrive/Documentos/ProjetosQuartus/riscvsingle/src/flopr.vhd Line: 10
-    Info (12023): Found entity 1: flopr File: C:/Users/gusta/OneDrive/Documentos/ProjetosQuartus/riscvsingle/src/flopr.vhd Line: 1
-Info (12021): Found 2 design units, including 1 entities, in source file /users/gusta/onedrive/documentos/projetosquartus/riscvsingle/src/som_1a.vhd
-    Info (12022): Found design unit 1: som_1a-teste File: C:/Users/gusta/OneDrive/Documentos/ProjetosQuartus/riscvsingle/src/som_1a.vhd Line: 6
-    Info (12023): Found entity 1: som_1a File: C:/Users/gusta/OneDrive/Documentos/ProjetosQuartus/riscvsingle/src/som_1a.vhd Line: 1
-Info (12021): Found 2 design units, including 1 entities, in source file /users/gusta/onedrive/documentos/projetosquartus/riscvsingle/src/adder.vhd
-    Info (12022): Found design unit 1: adder-teste File: C:/Users/gusta/OneDrive/Documentos/ProjetosQuartus/riscvsingle/src/adder.vhd Line: 9
-    Info (12023): Found entity 1: adder File: C:/Users/gusta/OneDrive/Documentos/ProjetosQuartus/riscvsingle/src/adder.vhd Line: 1
-Info (12021): Found 2 design units, including 1 entities, in source file /users/gusta/onedrive/documentos/projetosquartus/riscvsingle/src/alu.vhd
-    Info (12022): Found design unit 1: alu-rtl File: C:/Users/gusta/OneDrive/Documentos/ProjetosQuartus/riscvsingle/src/alu.vhd Line: 17
-    Info (12023): Found entity 1: alu File: C:/Users/gusta/OneDrive/Documentos/ProjetosQuartus/riscvsingle/src/alu.vhd Line: 6
-Info (12021): Found 2 design units, including 0 entities, in source file /users/gusta/onedrive/documentos/projetosquartus/riscvsingle/src/riscv_pkg.vhd
-    Info (12022): Found design unit 1: riscv_pkg File: C:/Users/gusta/OneDrive/Documentos/ProjetosQuartus/riscvsingle/src/riscv_pkg.vhd Line: 5
-    Info (12022): Found design unit 2: riscv_pkg-body File: C:/Users/gusta/OneDrive/Documentos/ProjetosQuartus/riscvsingle/src/riscv_pkg.vhd Line: 97
-Info (12021): Found 2 design units, including 1 entities, in source file /users/gusta/onedrive/documentos/projetosquartus/riscvsingle/src/teste_pkg.vhd
-    Info (12022): Found design unit 1: teste_pkg-teste File: C:/Users/gusta/OneDrive/Documentos/ProjetosQuartus/riscvsingle/src/teste_pkg.vhd Line: 16
-    Info (12023): Found entity 1: teste_pkg File: C:/Users/gusta/OneDrive/Documentos/ProjetosQuartus/riscvsingle/src/teste_pkg.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file /users/gusta/onedrive/documentos/projetosquartus/riscvsingle/src/regfile.vhd
-    Info (12022): Found design unit 1: regfile-Behavioral File: C:/Users/gusta/OneDrive/Documentos/ProjetosQuartus/riscvsingle/src/regfile.vhd Line: 21
-    Info (12023): Found entity 1: regfile File: C:/Users/gusta/OneDrive/Documentos/ProjetosQuartus/riscvsingle/src/regfile.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file /users/gusta/onedrive/documentos/projetosquartus/riscvsingle/src/extend.vhd
-    Info (12022): Found design unit 1: extend-rtl File: C:/Users/gusta/OneDrive/Documentos/ProjetosQuartus/riscvsingle/src/extend.vhd Line: 9
-    Info (12023): Found entity 1: extend File: C:/Users/gusta/OneDrive/Documentos/ProjetosQuartus/riscvsingle/src/extend.vhd Line: 1
-Info (12127): Elaborating entity "extend" for the top level hierarchy
+Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file /users/eduar/documents/github/hardwaredescriptionlanguage_sel0632/riscvsingle/src/mux2.vhd
+    Info (12022): Found design unit 1: mux2-rtl File: C:/Users/Eduar/Documents/GitHub/HardwareDescriptionLanguage_SEL0632/riscvsingle/src/mux2.vhd Line: 13
+    Info (12023): Found entity 1: mux2 File: C:/Users/Eduar/Documents/GitHub/HardwareDescriptionLanguage_SEL0632/riscvsingle/src/mux2.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file /users/eduar/documents/github/hardwaredescriptionlanguage_sel0632/riscvsingle/src/mux3.vhd
+    Info (12022): Found design unit 1: mux3-rtl File: C:/Users/Eduar/Documents/GitHub/HardwareDescriptionLanguage_SEL0632/riscvsingle/src/mux3.vhd Line: 8
+    Info (12023): Found entity 1: mux3 File: C:/Users/Eduar/Documents/GitHub/HardwareDescriptionLanguage_SEL0632/riscvsingle/src/mux3.vhd Line: 1
+Info (12021): Found 2 design units, including 1 entities, in source file /users/eduar/documents/github/hardwaredescriptionlanguage_sel0632/riscvsingle/src/flopr.vhd
+    Info (12022): Found design unit 1: flopr-rtl File: C:/Users/Eduar/Documents/GitHub/HardwareDescriptionLanguage_SEL0632/riscvsingle/src/flopr.vhd Line: 10
+    Info (12023): Found entity 1: flopr File: C:/Users/Eduar/Documents/GitHub/HardwareDescriptionLanguage_SEL0632/riscvsingle/src/flopr.vhd Line: 1
+Info (12021): Found 2 design units, including 1 entities, in source file /users/eduar/documents/github/hardwaredescriptionlanguage_sel0632/riscvsingle/src/som_1a.vhd
+    Info (12022): Found design unit 1: som_1a-teste File: C:/Users/Eduar/Documents/GitHub/HardwareDescriptionLanguage_SEL0632/riscvsingle/src/som_1a.vhd Line: 6
+    Info (12023): Found entity 1: som_1a File: C:/Users/Eduar/Documents/GitHub/HardwareDescriptionLanguage_SEL0632/riscvsingle/src/som_1a.vhd Line: 1
+Info (12021): Found 2 design units, including 1 entities, in source file /users/eduar/documents/github/hardwaredescriptionlanguage_sel0632/riscvsingle/src/adder.vhd
+    Info (12022): Found design unit 1: adder-teste File: C:/Users/Eduar/Documents/GitHub/HardwareDescriptionLanguage_SEL0632/riscvsingle/src/adder.vhd Line: 9
+    Info (12023): Found entity 1: adder File: C:/Users/Eduar/Documents/GitHub/HardwareDescriptionLanguage_SEL0632/riscvsingle/src/adder.vhd Line: 1
+Info (12021): Found 2 design units, including 1 entities, in source file /users/eduar/documents/github/hardwaredescriptionlanguage_sel0632/riscvsingle/src/alu.vhd
+    Info (12022): Found design unit 1: alu-rtl File: C:/Users/Eduar/Documents/GitHub/HardwareDescriptionLanguage_SEL0632/riscvsingle/src/alu.vhd Line: 17
+    Info (12023): Found entity 1: alu File: C:/Users/Eduar/Documents/GitHub/HardwareDescriptionLanguage_SEL0632/riscvsingle/src/alu.vhd Line: 6
+Info (12021): Found 2 design units, including 0 entities, in source file /users/eduar/documents/github/hardwaredescriptionlanguage_sel0632/riscvsingle/src/riscv_pkg.vhd
+    Info (12022): Found design unit 1: riscv_pkg File: C:/Users/Eduar/Documents/GitHub/HardwareDescriptionLanguage_SEL0632/riscvsingle/src/riscv_pkg.vhd Line: 5
+    Info (12022): Found design unit 2: riscv_pkg-body File: C:/Users/Eduar/Documents/GitHub/HardwareDescriptionLanguage_SEL0632/riscvsingle/src/riscv_pkg.vhd Line: 109
+Info (12021): Found 2 design units, including 1 entities, in source file /users/eduar/documents/github/hardwaredescriptionlanguage_sel0632/riscvsingle/src/teste_pkg.vhd
+    Info (12022): Found design unit 1: teste_pkg-teste File: C:/Users/Eduar/Documents/GitHub/HardwareDescriptionLanguage_SEL0632/riscvsingle/src/teste_pkg.vhd Line: 16
+    Info (12023): Found entity 1: teste_pkg File: C:/Users/Eduar/Documents/GitHub/HardwareDescriptionLanguage_SEL0632/riscvsingle/src/teste_pkg.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /users/eduar/documents/github/hardwaredescriptionlanguage_sel0632/riscvsingle/src/regfile.vhd
+    Info (12022): Found design unit 1: regfile-Behavioral File: C:/Users/Eduar/Documents/GitHub/HardwareDescriptionLanguage_SEL0632/riscvsingle/src/regfile.vhd Line: 21
+    Info (12023): Found entity 1: regfile File: C:/Users/Eduar/Documents/GitHub/HardwareDescriptionLanguage_SEL0632/riscvsingle/src/regfile.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /users/eduar/documents/github/hardwaredescriptionlanguage_sel0632/riscvsingle/src/extend.vhd
+    Info (12022): Found design unit 1: extend-rtl File: C:/Users/Eduar/Documents/GitHub/HardwareDescriptionLanguage_SEL0632/riscvsingle/src/extend.vhd Line: 9
+    Info (12023): Found entity 1: extend File: C:/Users/Eduar/Documents/GitHub/HardwareDescriptionLanguage_SEL0632/riscvsingle/src/extend.vhd Line: 1
+Info (12021): Found 2 design units, including 1 entities, in source file /users/eduar/documents/github/hardwaredescriptionlanguage_sel0632/riscvsingle/src/aludec.vhd
+    Info (12022): Found design unit 1: aludec-comportamento File: C:/Users/Eduar/Documents/GitHub/HardwareDescriptionLanguage_SEL0632/riscvsingle/src/aludec.vhd Line: 11
+    Info (12023): Found entity 1: aludec File: C:/Users/Eduar/Documents/GitHub/HardwareDescriptionLanguage_SEL0632/riscvsingle/src/aludec.vhd Line: 1
+Info (12127): Elaborating entity "aludec" for the top level hierarchy
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 7 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "instr[0]" File: C:/Users/gusta/OneDrive/Documentos/ProjetosQuartus/riscvsingle/src/extend.vhd Line: 4
-    Warning (15610): No output dependent on input pin "instr[1]" File: C:/Users/gusta/OneDrive/Documentos/ProjetosQuartus/riscvsingle/src/extend.vhd Line: 4
-    Warning (15610): No output dependent on input pin "instr[2]" File: C:/Users/gusta/OneDrive/Documentos/ProjetosQuartus/riscvsingle/src/extend.vhd Line: 4
-    Warning (15610): No output dependent on input pin "instr[3]" File: C:/Users/gusta/OneDrive/Documentos/ProjetosQuartus/riscvsingle/src/extend.vhd Line: 4
-    Warning (15610): No output dependent on input pin "instr[4]" File: C:/Users/gusta/OneDrive/Documentos/ProjetosQuartus/riscvsingle/src/extend.vhd Line: 4
-    Warning (15610): No output dependent on input pin "instr[5]" File: C:/Users/gusta/OneDrive/Documentos/ProjetosQuartus/riscvsingle/src/extend.vhd Line: 4
-    Warning (15610): No output dependent on input pin "instr[6]" File: C:/Users/gusta/OneDrive/Documentos/ProjetosQuartus/riscvsingle/src/extend.vhd Line: 4
-Info (21057): Implemented 81 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 34 input pins
-    Info (21059): Implemented 32 output pins
-    Info (21061): Implemented 15 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 4812 megabytes
-    Info: Processing ended: Mon Jun  9 14:32:00 2025
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:21
+Info (21057): Implemented 15 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 7 input pins
+    Info (21059): Implemented 3 output pins
+    Info (21061): Implemented 5 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4878 megabytes
+    Info: Processing ended: Tue Jun 10 17:24:16 2025
+    Info: Elapsed time: 00:00:27
+    Info: Total CPU time (on all processors): 00:00:24
 
 
