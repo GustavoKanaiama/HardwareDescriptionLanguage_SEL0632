@@ -1,0 +1,28 @@
+ENTITY adder IS
+  GENERIC( Width 			: INTEGER := 32); 
+  PORT   ( a, b 		: in  BIT_VECTOR(Width-1 DOWNTO 0);
+				cin 		: in  BIT;
+             y		   : out BIT_VECTOR(Width-1 DOWNTO 0);
+				 cout		: out BIT); 
+END adder;
+
+ARCHITECTURE teste OF adder IS
+
+COMPONENT som_1a
+	PORT(a, b, ve : in BIT; s, vs : out BIT);
+END COMPONENT;
+
+SIGNAL v : BIT_VECTOR(Width DOWNTO 0);
+BEGIN
+
+v(0) <= cin;
+cout <= v(Width);
+
+
+	sum: FOR i IN 0 TO Width-1 GENERATE
+	
+		interno: som_1a PORT MAP (a(i), b(i), v(i), y(i), v(i+1));
+	
+END GENERATE;
+
+END teste;
