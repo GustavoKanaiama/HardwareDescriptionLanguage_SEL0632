@@ -1,5 +1,0 @@
-
-ENTITY regfile IS
-	PORT(
-			);
-END
