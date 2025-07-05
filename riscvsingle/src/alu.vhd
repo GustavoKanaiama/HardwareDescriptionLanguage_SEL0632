@@ -3,12 +3,13 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_bit.all;
 use ieee.math_real.all;
 
+
 ENTITY alu IS
   GENERIC (Width : INTEGER := 32); 
   PORT (
     a, b        : IN  BIT_VECTOR(Width-1 DOWNTO 0);
     ALUControl  : IN  BIT_VECTOR(2 DOWNTO 0);
-    Result      : OUT BIT_VECTOR(Width-1 DOWNTO 0);
+    ALUResult      : OUT BIT_VECTOR(Width-1 DOWNTO 0);
     Zero        : OUT BIT
   ); 
 END alu;
@@ -119,6 +120,6 @@ BEGIN
 
   -- Zero flag is '1' when result is all zeros
   Zero <= '1' WHEN result_s = (result_s'RANGE => '0') ELSE '0';
-  Result <= result_s;
+  ALUResult <= result_s;
 
 END rtl;

@@ -3,12 +3,17 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_bit.all;
 use ieee.math_real.all;
 
+
+library work;
+use work.adder;
+use work.som_1a;
+
 ENTITY alu IS
-  GENERIC (n : INTEGER := 32); 
+  GENERIC (Width : INTEGER := 32); 
   PORT (
-    a, b        : IN  BIT_VECTOR(n-1 DOWNTO 0);
+    a, b        : IN  BIT_VECTOR(Width-1 DOWNTO 0);
     ALUControl  : IN  BIT_VECTOR(2 DOWNTO 0);
-    Result      : OUT BIT_VECTOR(n-1 DOWNTO 0);
+    ALUResult      : OUT BIT_VECTOR(Width-1 DOWNTO 0);
     Zero        : OUT BIT
   ); 
 END alu;
@@ -17,11 +22,11 @@ END alu;
 ARCHITECTURE rtl OF alu IS
 
   COMPONENT adder
-    GENERIC (n : INTEGER := 32);
+    GENERIC (Width : INTEGER := 32);
     PORT (
-      a, b   : IN  BIT_VECTOR(n-1 DOWNTO 0);
+      a, b   : IN  BIT_VECTOR(Width-1 DOWNTO 0);
       cin    : IN  BIT;
-      y      : OUT BIT_VECTOR(n-1 DOWNTO 0);
+      y      : OUT BIT_VECTOR(Width-1 DOWNTO 0);
       cout   : OUT BIT
     );
   END COMPONENT;
@@ -57,22 +62,22 @@ BEGIN
 END FUNCTION;
 
   -- Signals for adder
-  SIGNAL add_a, add_b : BIT_VECTOR(n-1 DOWNTO 0);
+  SIGNAL add_a, add_b : BIT_VECTOR(Width-1 DOWNTO 0);
   SIGNAL add_cin : BIT;
-  SIGNAL add_result : BIT_VECTOR(n-1 DOWNTO 0);
+  SIGNAL add_result : BIT_VECTOR(Width-1 DOWNTO 0);
   SIGNAL add_cout : BIT;
   
   -- Other signals
-  SIGNAL all_zero 	: BIT_VECTOR(n-1 DOWNTO 0) := (OTHERS => '0'); 
-  SIGNAL b_inverted : BIT_VECTOR(n-1 DOWNTO 0);
-  SIGNAL result_s   : BIT_VECTOR(n-1 DOWNTO 0);
+  SIGNAL all_zero 	: BIT_VECTOR(Width-1 DOWNTO 0) := (OTHERS => '0'); 
+  SIGNAL b_inverted : BIT_VECTOR(Width-1 DOWNTO 0);
+  SIGNAL result_s   : BIT_VECTOR(Width-1 DOWNTO 0);
   SIGNAL zero_sig   : BIT;
 
 BEGIN
 
   -- Instantiate the adder component
   U_ADDER: adder
-    GENERIC MAP (n => n)
+    GENERIC MAP (Width => Width)
     PORT MAP (
       a    => add_a,
       b    => add_b,
@@ -84,6 +89,7 @@ BEGIN
 
   -- Process to control ALU operation
   PROCESS(ALUControl, a, b, add_result)
+		VARIABLE sub_result : BIT_VECTOR(Width-1 DOWNTO 0);
   BEGIN
     -- Default assignments
     add_a <= (OTHERS => '0');
@@ -118,6 +124,6 @@ BEGIN
 
   -- Zero flag is '1' when result is all zeros
   Zero <= '1' WHEN result_s = (result_s'RANGE => '0') ELSE '0';
-  Result <= result_s;
+  ALUResult <= result_s;
 
 END rtl;

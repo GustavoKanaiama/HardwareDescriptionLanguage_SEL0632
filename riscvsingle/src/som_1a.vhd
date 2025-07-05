@@ -1,10 +1,10 @@
 ENTITY som_1a IS
-  PORT   (a, b, ve  : IN  BIT;
-          s, vs     : OUT BIT); 
+  PORT   (a, b, cin  : IN  BIT;
+          s, cout     : OUT BIT); 
 END som_1a;
 
 ARCHITECTURE teste OF som_1a IS
 BEGIN
-  s  <=  a XOR b  XOR ve;                      -- soma
-  vs <= (a AND b) OR (a AND ve) OR (b AND ve); -- vai um
+  s  <=  a XOR b  XOR cin;                      -- soma
+  cout <= (a AND b) OR (a AND cin) OR (b AND cin); -- vai um
 END teste;

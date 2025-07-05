@@ -9,7 +9,7 @@ END adder;
 ARCHITECTURE teste OF adder IS
 
 COMPONENT som_1a
-	PORT(a, b, ve : in BIT; s, vs : out BIT);
+    PORT(a, b, cin : in BIT; s, cout : out BIT);
 END COMPONENT;
 
 SIGNAL v : BIT_VECTOR(Width DOWNTO 0);

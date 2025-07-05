@@ -95,6 +95,8 @@ PACKAGE riscv_pkg IS
 END riscv_pkg;
 
 PACKAGE BODY riscv_pkg IS
+	
+
 
   -- função para converter BIT_VECTOR para inteiro
   FUNCTION bit_vector_to_integer(bv: BIT_VECTOR(4 DOWNTO 0)) RETURN integer IS
